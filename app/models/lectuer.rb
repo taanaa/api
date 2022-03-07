@@ -1,0 +1,2 @@
+class Lectuer < ApplicationRecord
+end

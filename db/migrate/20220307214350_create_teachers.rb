@@ -1,8 +1,7 @@
 class CreateTeachers < ActiveRecord::Migration[6.0]
   def change
     create_table :teachers do |t|
-      t.string :title
-      t.text :content
+      t.string :name
 
       t.timestamps
     end
