@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'api1s#index'
-  resources :api1s
+  resources :teachers
+  root 'teacher#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

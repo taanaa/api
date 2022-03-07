@@ -1,6 +1,6 @@
-class CreateApi1s < ActiveRecord::Migration[6.0]
+class CreateTeachers < ActiveRecord::Migration[6.0]
   def change
-    create_table :api1s do |t|
+    create_table :teachers do |t|
       t.string :title
       t.text :content
 

@@ -1,10 +1,10 @@
-<%= form_with(model: api1, local: true) do |form| %>
-  <% if api1.errors.any? %>
+<%= form_with(model: teacher, local: true) do |form| %>
+  <% if teacher.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(api1.errors.count, "error") %> prohibited this api1 from being saved:</h2>
+      <h2><%= pluralize(teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
 
       <ul>
-        <% api1.errors.full_messages.each do |message| %>
+        <% teacher.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
