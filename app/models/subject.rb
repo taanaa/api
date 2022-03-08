@@ -1,4 +1,4 @@
 class Subject < ApplicationRecord
   has_many :lectuers
-  belongs_to :teacher
+  has_many :teachers, through: :teacher_subjects
 end

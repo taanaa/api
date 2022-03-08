@@ -1,4 +1,4 @@
 class Teacher < ApplicationRecord
   has_many :lectuers
-  has_one :subject
+  has_many :subjects, through: :teacher_subjects
 end

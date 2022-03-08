@@ -10,23 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_07_073214) do
+ActiveRecord::Schema.define(version: 2022_03_08_015543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "api1s", force: :cascade do |t|
+  create_table "lectuers", force: :cascade do |t|
     t.string "title"
-    t.text "content"
+    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "title"
+    t.string "weekday"
+    t.integer "period"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "teacher_subjects", force: :cascade do |t|
+    t.bigint "teacher_id", null: false
+    t.bigint "subject_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["subject_id"], name: "index_teacher_subjects_on_subject_id"
+    t.index ["teacher_id"], name: "index_teacher_subjects_on_teacher_id"
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "teacher_subjects", "subjects"
+  add_foreign_key "teacher_subjects", "teachers"
 end
